@@ -1,18 +1,17 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import styles from "./apppoint.module.scss";
 import img from "../../assets/bg2.jpg";
 import { Link } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import USerContext from "../../context/userContext";
 
-
 function Appointment(props) {
-   const currentUser= useContext(USerContext)
+  const currentUser = useContext(USerContext);
 
-   console.log('context', currentUser);
+  console.log("context", currentUser);
 
   const config = {
-    public_key: process.env.REACT_APP_FLUTTER_API_KEY ,
+    public_key: process.env.REACT_APP_FLUTTER_API_KEY,
     tx_ref: Date.now(),
     amount: 200,
     currency: "NGN",
@@ -48,6 +47,8 @@ function Appointment(props) {
   };
   return (
     <div>
+      {process.env.REACT_APP_FLUTTER_API_KEY}
+      {process.env.REACT_APP_FLUTTER_API_KEY}
       <div className={styles.banner}>
         <p className={styles.banner_text}>Appointment</p>
       </div>
@@ -74,7 +75,6 @@ function Appointment(props) {
             <Link to="#" onClick={handlePayment} className={styles.btn}>
               Make an Appointment
             </Link>
-
           </div>
         </div>
       </div>
