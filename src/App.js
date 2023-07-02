@@ -15,8 +15,11 @@ function App() {
 
   return (
     <div className="App">
+   
       <USerContext.Provider value={currentUSer}>
         <AppHeader />
+
+    
 
         <Routes>
           <Route path="/" element={<HomePage />} />

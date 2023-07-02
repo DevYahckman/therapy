@@ -12,7 +12,7 @@ function Appointment(props) {
    console.log('context', currentUser);
 
   const config = {
-    public_key: "FLWPUBK_TEST-6f083513565f67df3bb0cb06ff8ae7fe-X",
+    public_key: process.env.REACT_APP_FLUTTER_API_KEY ,
     tx_ref: Date.now(),
     amount: 200,
     currency: "NGN",
@@ -74,6 +74,7 @@ function Appointment(props) {
             <Link to="#" onClick={handlePayment} className={styles.btn}>
               Make an Appointment
             </Link>
+
           </div>
         </div>
       </div>

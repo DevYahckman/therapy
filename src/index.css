@@ -8,17 +8,21 @@ body {
 }
 
 .hideOnDesktop{
-  display: none;
+  visibility: hidden;
 }
-img{
-  border-radius: 0px;
+.hideOnMobile{
+  visibility: visible;
 }
+
+
 
 @media screen and (max-width:768px) {
   .hideOnDesktop{
-      display: block !important;
+    visibility: visible;
   }
+
   .hideOnMobile{
-      display: none !important;
+    visibility: visible;
   }
 }
+

@@ -1,82 +1,80 @@
-import React, {useState} from 'react';
-import { Link } from "react-router-dom";
-import { Offcanvas } from "react-bootstrap";
-// import { navItems } from '../../utils/helpers/nav';
-import { navItems } from './navItem';
-// import {HiOutlineMenuAlt1} from 'react-icons/hi'
+import React from "react";
 import styles from "./header.module.scss";
+import { Link } from 'react-router-dom';
+import { AiFillHome, AiOutlineMenuUnfold } from "react-icons/ai";
+import {CgMenuGridR} from 'react-icons/cg'
+import { useState } from "react";
 
-const linkStyle = {
-  textDecoration: "none",
-};
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { FcServices} from 'react-icons/fc';
+import {BsInfoCircle} from 'react-icons/bs'
+import {MdContactMail, MdPriceChange} from 'react-icons/md'
+import {IoCarSportSharp} from 'react-icons/io5'
+import {GrBlog} from 'react-icons/gr'
+function Header(props) {
+  const [scrollValue, setScrollValue]= useState(window.scrollY)
+    const [isActive, setisActive] = useState(false)
+    const [show, setShow]=useState(false);
 
-function AppHeader(props) {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-
-// const [show, setShow] = useState(false)
-
+    const handleShow=()=>{setShow(true)}
+    const handleclose=()=>{setShow(false)}
+    const handleActive=()=>{
+     
+        setisActive(!isActive)
+    }
   return (
-    <div className={styles.header}>
-      <div className={`${styles.textLogo}`}>
-        {/* <img className={`${styles.logo}`} src="/assets/logo.png" alt="logo" /> */}
-        <div>LOGO</div>
-      </div>
-      <div className={`${styles.navSection} ${styles.hideOnMobile} justify-content-end`}>
-        <Link to="/" style={linkStyle}>
-          <span className={`${styles.navItem}`}>Home</span>
-        </Link>
-        <Link to="#" style={linkStyle}>
-          <span className={`${styles.navItem}`}>About </span>
-        </Link>
-        <Link to="/login" style={linkStyle}>
-          <span className={`${styles.navItem}`}>Doctors</span>
-        </Link>
-        <Link to="#" style={linkStyle}>
-          <span className={`${styles.navItem}`}>Blog</span>
-        </Link>
-        <Link to="#" style={linkStyle}>
-          <span className={`${styles.navItem}`}>Contact </span>
-        </Link>
-        <Link to="/appointment" style={linkStyle}>
-          <span className={`${styles.navItem} ${styles.btn}`}>
-            Book a therapy
-          </span>
-        </Link>
-      </div>
-
-      <Offcanvas
-        show={show}
-        onHide={handleClose}
-        placement="end"
-        style={{ width: "70%" }}
-      >
-        <div className={styles.sideBarContainer}>
-          <div className={`${styles.textLogo}`}>
-            <img
-              className={`${styles.logo}`}
-              src="../assets/logo.png"
-              alt="logo"
-            />
-            <div>
-              LOGO
-            </div>
-          </div>
-
-          <div className={styles.navItems}>
-            {navItems.map((item, i) => (
-              <Link key={i} style={{ textDecoration: "none" }} to={item.path}>
-                <div className={styles.navItem}>
-                  <span className={styles.icon}>{item.icon}</span>
-                  <span>{item.label}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+    <div>
+      <div className={` container ${styles.header}`}>
+        <div className={styles.title}>
+          <span className={styles.title_main}>Car</span>
+          <span className= {styles.title_sub}>Book</span>
         </div>
-      </Offcanvas>
+
+        <nav  className={`  ${styles.hideOnMobile} ${styles.navs}`}>
+            <Link to='/'  className={` ${styles.nav_items}`}>Home</Link>
+            <Link to='#'  className={` ${styles.nav_items}`}>About</Link>
+            <Link to='#'  className={` ${styles.nav_items}`}>Department</Link>
+            <Link to='#'  className={` ${styles.nav_items}`}>Blog</Link>
+            <Link to='#'  className={` ${styles.nav_items}`}>Contact</Link>
+            <Link to='/appointment'  className={`${styles.btn} ${styles.nav_items}`}>Appointment</Link>
+        </nav>
+
+
+        <div className={`${styles.hideOnDesktop} ${styles.icon}`}>
+           <CgMenuGridR size={30} onClick={handleShow}/>
+           
+           <Offcanvas show={show} onHide={handleclose} placement={"end"} >
+
+           <Offcanvas.Header closeButton>
+          <Offcanvas.Title>
+          <div className={styles.title}>
+          <span className={styles.title_main}>Car</span>
+          <span className= {styles.title_sub}>Book</span>
+        </div>
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+
+        <Offcanvas.Body>
+          <div className={styles.resp_nav}>
+            <Link to='/' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}><AiFillHome size={20}/></span> Home</Link>
+            <Link to='/about' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}>< BsInfoCircle size={20}/></span> About</Link>
+            <Link to='/services' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}><FcServices size={20}/></span> Departmen</Link>
+            <Link to='/pricing' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}><MdPriceChange size={20}/></span> Blog</Link>
+            <Link to='#' onClick={handleclose} className={styles.resp_navs}>
+              <span className={styles.resp_navs_logo}>< GrBlog size={20}/></span> Blog</Link>
+            <Link to='/contact' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}>< MdContactMail size={20}/></span>  Contact</Link>
+            {/* <Link to='/appointment' onClick={handleclose} className={styles.resp_navs}> <span className={styles.resp_navs_logo}>< MdContactMail size={20}/></span>  Appointment</Link> */}
+            
+          </div>
+        </Offcanvas.Body>
+           </Offcanvas>
+       </div>
+
+      
+       
+      </div>
     </div>
   );
 }
 
-export default AppHeader;
+export default Header;
