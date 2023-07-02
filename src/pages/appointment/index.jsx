@@ -8,7 +8,6 @@ import USerContext from "../../context/userContext";
 function Appointment(props) {
   const currentUser = useContext(USerContext);
 
-  console.log("context", currentUser);
 
   const config = {
     public_key: process.env.REACT_APP_FLUTTER_API_KEY,
@@ -47,8 +46,6 @@ function Appointment(props) {
   };
   return (
     <div>
-      {process.env.REACT_APP_FLUTTER_API_KEY}
-      {process.env.REACT_APP_FLUTTER_API_KEY}
       <div className={styles.banner}>
         <p className={styles.banner_text}>Appointment</p>
       </div>
