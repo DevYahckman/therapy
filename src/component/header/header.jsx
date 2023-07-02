@@ -22,7 +22,7 @@ function Header(props) {
   return (
     <div>
       <div className={` container ${styles.header}`}>
-        <div className={styles.title}>Mediplus</div>
+        <div className={styles.title}>Medi+</div>
 
         <nav className={`  ${styles.hideOnMobile} ${styles.navs}`}>
           <Link to="/" className={` ${styles.nav_items}`}>
@@ -54,7 +54,7 @@ function Header(props) {
           <Offcanvas show={show} onHide={handleclose} placement={"end"}>
             <Offcanvas.Header closeButton>
               <Offcanvas.Title>
-                <div className={styles.title}>Mediplus</div>
+                <div className={styles.title}>Medi+</div>
               </Offcanvas.Title>
             </Offcanvas.Header>
 
