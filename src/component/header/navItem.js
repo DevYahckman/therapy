@@ -4,7 +4,6 @@ import {RiVideoFill} from 'react-icons/ri'
 
 
 const iconSize = 24
-const authIconSize = 24
 
 const color = "#1A8F4A"
 export const navItems = [
@@ -14,19 +13,20 @@ export const navItems = [
         path:'/'
     },
     {
-        label:'Resources',
+        label:'About Us',
+        icon:<AiFillInfoCircle color={color} size={iconSize} />
+    },
+    {
+        label:'Department',
         icon:<RiVideoFill color={color} size={iconSize} />,
         path:'/resources'
     },
     {
-        label:'E-portal',
+        label:'Blog',
         icon:<MdSchool color={color} size={iconSize} />,
         path:'/login'
     },
-    {
-        label:'About Us',
-        icon:<AiFillInfoCircle color={color} size={iconSize} />
-    },
+    
     {
         label:'Contact Us',
         icon:<MdHelp color={color} size={iconSize} />
