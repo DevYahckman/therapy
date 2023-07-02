@@ -1,20 +1,26 @@
-import React from "react";
+import React,{useContext} from "react";
 import styles from "./apppoint.module.scss";
 import img from "../../assets/bg2.jpg";
 import { Link } from "react-router-dom";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
+import USerContext from "../../context/userContext";
+
 
 function Appointment(props) {
+   const currentUser= useContext(USerContext)
+
+   console.log('context', currentUser);
+
   const config = {
     public_key: "FLWPUBK_TEST-6f083513565f67df3bb0cb06ff8ae7fe-X",
     tx_ref: Date.now(),
-    amount: 100,
+    amount: 200,
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: "user@gmail.com",
-      phone_number: "070********",
-      name: "john doe",
+      email: currentUser.gmail,
+      phone_number: currentUser.phone,
+      name: currentUser.name,
     },
     text: "Book Now",
     customizations: {
@@ -31,7 +37,7 @@ function Appointment(props) {
       callback: (response) => {
         console.log(response);
         if (response.status === "successful") {
-          window.location.href = "https://github.com/Yahckman1112";
+          window.location.href = "https://calendly.com/friendnpaldev/flutter";
         } else {
           alert("Transaction fail");
         }
