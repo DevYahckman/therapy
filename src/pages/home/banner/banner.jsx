@@ -6,7 +6,7 @@ function Banner(props) {
     <div className={styles.banner}>
       <div className="row">
         <div className="col-12 col-lg-6 col-md-12">
-          <p className={styles.para_1}>Welcome to John_Doe</p>
+          <p className={styles.para_1}>Welcome to Mediplus</p>
 
           <p className={styles.para_2}>we are here for your care</p>
 

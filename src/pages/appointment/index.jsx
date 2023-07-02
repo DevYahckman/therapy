@@ -59,7 +59,7 @@ function Appointment(props) {
           </div>
           <div className="col-12 col-lg-6 col-md-12">
             <p className={styles.para_1}>
-              We Are <span style={{ color: "blue" }}>John_DOe</span> A Medical
+              We Are <span style={{ color: "blue" }}>MediPlus</span> Medical
               Clinic
             </p>
 
