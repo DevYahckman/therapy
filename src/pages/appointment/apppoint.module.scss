@@ -1,0 +1,68 @@
+@import "../home/banner/banner.module.scss";
+.banner {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../../assets/bg4.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem;
+
+  @media screen and (max-width:430px) {
+    padding: 1rem;
+  }
+}
+
+
+.banner_text {
+  font-weight: 700;
+  color: #000000;
+  font-size: 3rem;
+  padding-top: 22rem;
+
+  @media screen and (max-width:430px) {
+    text-align: left;
+  }
+  @media screen and (max-width:768px) {
+    text-align: left;
+  }
+}
+
+.appoint {
+  padding: 0px 8rem 0px 8rem;
+  width: 100%;
+  height: 80vh;
+
+  @media screen and (max-width:430px) {
+    padding: 0px 1rem 0px 1rem;
+  }
+  @media screen and (max-width:768px) {
+    padding: 0px 2rem 0px 2rem;
+  }
+}
+
+.img {
+  height: 80vh;
+  width: 100%;
+}
+
+.para {
+  &_1 {
+    line-height: 1.2;
+    font-size: 3rem;
+    font-weight: 700;
+    color: black;
+    padding-top: 3rem;
+  }
+
+  &_2 {
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: rgb(153, 153, 153);
+  }
+}
+
+.btn {
+  @extend .btn;
+}

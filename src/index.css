@@ -7,7 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hideOnDesktop{
+  display: none;
+}
+img{
+  border-radius: 0px;
+}
+
+@media screen and (max-width:768px) {
+  .hideOnDesktop{
+      display: block !important;
+  }
+  .hideOnMobile{
+      display: none !important;
+  }
 }

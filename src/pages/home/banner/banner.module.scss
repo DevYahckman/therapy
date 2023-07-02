@@ -1,0 +1,57 @@
+.banner {
+  background-image: linear-gradient(to right, #999999e3, #999999b2),
+    url("../../../assets/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  padding: 5rem;
+  color: white;
+
+  @media screen and (max-width:768px) {
+    padding: 2rem;
+    text-align: center;
+  }
+  @media screen and (max-width:430px) {
+    padding: 2rem;
+    height: auto;
+ 
+  }
+}
+
+.para {
+  &_1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  &_2 {
+    font-size: 4rem;
+    color: #000000;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    @media screen and (max-width:430px) {
+        font-size: 3rem;
+        
+      }
+  }
+  &_3 {
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.701);
+  }
+}
+
+.btn{
+    background-color: #207dff;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
